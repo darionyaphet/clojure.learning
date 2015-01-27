@@ -1,3 +1,16 @@
+;; Seq Examples
+;; Create seq
+(println (cons 0 (range 1 5)))
+(println (cons :a [:b :c :d]))
+
+;; lazy seq 
+(println (lazy-seq [1 2 3]))
+
+(defn random-ints [limit]
+  (lazy-seq (cons (rand-int limit) (random-ints limit)))
+  )
+(println (take 10 (random-ints 100)))
+
 ;; List Examples
 (list 1 2 3 4) ; define a List
 (println (range 4))      ; (0 1 2 3) 
@@ -38,3 +51,10 @@
 (def array (int-array [1 2 3 4 5]))
 (def another (aclone array))
 (prn another)
+
+
+(defn map-map [fun m]
+  (into (empty m) (for [[k v] m] [k (fun v)])))
+
+(map-map inc (hash-map :a 1 :b 2 :c 3)  )
+(map-map inc (sorted-map :a 1 :b 2 :c 3))
