@@ -3,4 +3,7 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.5.1"]])
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [korma "0.4.0"]
+                 [org.xerial/sqlite-jdbc "3.7.15-M1"]]
+  :main korma.core)
