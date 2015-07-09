@@ -14,3 +14,5 @@
 ;(defmacro with-tree [tree & body]
 ; 
 ; )
+
+(defmacro my-first-macro [] (list ))
