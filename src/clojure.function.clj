@@ -86,4 +86,15 @@
 (prn (concat [:a :b] nil [1 [2 3] 4]))
 
 
+(defn titleize
+  [topic]
+  (str topic " for the Brave and True"))
 
+(map titleize ["Hamsters" "Ragnarok"])
+; => ("Hamsters for the Brave and True" "Ragnarok for the Brave and True")
+
+(map titleize '("Empathy" "Decorating"))
+; => ("Empathy for the Brave and True" "Decorating for the Brave and True")
+
+(map titleize #{"Elbows" "Soap Carving"})
+; => ("Soap Carving for the Brave and True" "Elbows for the Brave and True")
